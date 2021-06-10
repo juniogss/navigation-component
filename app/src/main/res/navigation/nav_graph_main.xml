@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.junio.navigationcomponent.ui.start.StartFragment"
-        android:label="fragment_start"
+        android:label="@string/start_title"
         tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_profileFragment"
@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.junio.navigationcomponent.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/profile_title"
         tools:layout="@layout/fragment_profile" />
 </navigation>
