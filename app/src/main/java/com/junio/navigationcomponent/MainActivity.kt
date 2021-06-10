@@ -1,7 +1,9 @@
 package com.junio.navigationcomponent
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.junio.navigationcomponent.ui.profile.ProfileFragment
+import com.junio.navigationcomponent.ui.start.StartFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
