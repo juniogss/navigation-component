@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.junio.navigationcomponent.R
 import com.junio.navigationcomponent.databinding.FragmentStartBinding
+import com.junio.navigationcomponent.extensions.navigateWithAnimations
 
 class StartFragment : Fragment() {
 
@@ -25,7 +26,7 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btOpen.setOnClickListener {
-            findNavController().navigate(R.id.action_startFragment_to_profileFragment)
+            findNavController().navigateWithAnimations(R.id.action_startFragment_to_profileFragment)
         }
     }
 
