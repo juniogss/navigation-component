@@ -13,4 +13,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="AppButton.SignUp">
+        <item name="android:background">@color/blue</item>
+    </style>
+
+    <style name="AppTextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:background">@color/grey</item>
+    </style>
+
 </resources>

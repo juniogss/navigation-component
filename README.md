@@ -6,3 +6,4 @@ Projeto para estudo das bibliotecas Jetpack em Kotlin
 - Lifecycle
 - Toolbar
 - Animations
+- MutableLiveData
