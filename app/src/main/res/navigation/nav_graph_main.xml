@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_startFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -26,6 +23,6 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.junio.navigationcomponent.ui.login.LoginFragment"
-        android:label="login_fragment"
+        android:label="@string/login_action_bar_title"
         tools:layout="@layout/login_fragment" />
 </navigation>

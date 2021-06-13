@@ -7,18 +7,30 @@ import com.junio.navigationcomponent.R
 class LoginViewModel : ViewModel() {
 
     sealed class AuthenticationState {
+        object Unauthenticated : AuthenticationState()
+        object Authenticated : AuthenticationState()
         class InvalidAuthentication(val fields: List<Pair<String, Int>>) : AuthenticationState()
     }
 
     val authenticationStateEvent = MutableLiveData<AuthenticationState>()
+    var username: String = ""
+
+    init {
+        refuseAuthentication()
+    }
+
+    fun refuseAuthentication(){
+        authenticationStateEvent.value = AuthenticationState.Unauthenticated
+    }
 
     fun authentication(username: String, password: String) {
-        if (isValidForm(username, password)){
-
+        if (isValidForm(username, password)) {
+            this.username = username
+            authenticationStateEvent.value = AuthenticationState.Authenticated
         }
     }
 
-    private fun isValidForm(username: String, password: String) : Boolean {
+    private fun isValidForm(username: String, password: String): Boolean {
         val invalidFields = arrayListOf<Pair<String, Int>>()
 
         if (username.isEmpty())
@@ -27,8 +39,9 @@ class LoginViewModel : ViewModel() {
         if (password.isEmpty())
             invalidFields.add(INPUT_PASSWORD)
 
-        if (invalidFields.isNotEmpty()){
-            authenticationStateEvent.value = AuthenticationState.InvalidAuthentication(invalidFields)
+        if (invalidFields.isNotEmpty()) {
+            authenticationStateEvent.value =
+                AuthenticationState.InvalidAuthentication(invalidFields)
             return false
         }
 
